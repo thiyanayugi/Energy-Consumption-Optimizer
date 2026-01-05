@@ -134,12 +134,16 @@ def optimize_schedule(appliances_config: Dict,
     problem = cp.Problem(objective, constraints)
     
     print("Solving optimization problem...")
-    problem.solve(solver=cp.GLPK_MI, verbose=False)
-    
-    if problem.status not in ["optimal", "optimal_inaccurate"]:
-        print(f"Warning: Optimization status: {problem.status}")
-        print("Trying alternative solver...")
-        problem.solve(solver=cp.CBC, verbose=False)
+    try:
+        # Try ECOS solver first (comes with cvxpy)
+        problem.solve(solver=cp.ECOS_BB, verbose=False)
+    except:
+        try:
+            # Try SCS solver
+            problem.solve(solver=cp.SCS, verbose=False)
+        except:
+            # Try default solver
+            problem.solve(verbose=False)
     
     if problem.status not in ["optimal", "optimal_inaccurate"]:
         raise RuntimeError(f"Optimization failed with status: {problem.status}")

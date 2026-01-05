@@ -102,17 +102,17 @@ FLEXIBLE_APPLIANCES = {
 # ELECTRICITY PRICING (Time-of-Use)
 # ============================================================================
 
-# Hourly electricity prices (£/kWh) - Example UK tariff
-# Peak hours (16:00-19:00): Higher price
-# Off-peak hours (00:00-07:00, 23:00-24:00): Lower price
+# Hourly electricity prices (£/kWh) - Realistic UK Economy 7 / Time-of-Use tariff
+# Peak hours (16:00-20:00): Very high price (demand surge)
+# Off-peak hours (00:00-07:00, 23:00-24:00): Very low price (encourage night usage)
 # Standard hours: Medium price
 HOURLY_PRICES = [
-    0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10,  # 00:00-06:00 (off-peak)
-    0.15, 0.15, 0.15, 0.15, 0.15,              # 07:00-11:00 (standard)
-    0.15, 0.15, 0.15, 0.15,                    # 12:00-15:00 (standard)
-    0.25, 0.25, 0.25,                          # 16:00-18:00 (peak)
-    0.15, 0.15, 0.15, 0.15,                    # 19:00-22:00 (standard)
-    0.10                                        # 23:00-24:00 (off-peak)
+    0.08, 0.08, 0.08, 0.08, 0.08, 0.08, 0.08,  # 00:00-06:00 (off-peak - cheapest)
+    0.12, 0.14, 0.16, 0.16, 0.16,              # 07:00-11:00 (morning ramp-up)
+    0.18, 0.18, 0.18, 0.20,                    # 12:00-15:00 (daytime)
+    0.35, 0.40, 0.40, 0.35,                    # 16:00-19:00 (peak - most expensive!)
+    0.22, 0.18, 0.14,                          # 20:00-22:00 (evening wind-down)
+    0.10                                        # 23:00-24:00 (late off-peak)
 ]
 
 # ============================================================================

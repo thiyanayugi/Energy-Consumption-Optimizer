@@ -41,9 +41,10 @@ def load_refit_data(data_path: str, home_id: int = 1) -> pd.DataFrame:
             # The format has columns: TimeSeriesVariable/@id, dateTime, data
             # We need to map TimeSeriesVariable IDs to houses and appliances
             
-            # For demo purposes, load a subset of data
-            print("Loading subset of data (first 100,000 rows for demo)...")
-            df = pd.read_csv(combined_file, nrows=100000)
+            print("Loading FULL dataset (this may take a few minutes)...")
+            df = pd.read_csv(combined_file)  # Load ALL data
+            
+            print(f"Loaded {len(df)} total rows from combined file")
             
             # Convert to wide format
             df['timestamp'] = pd.to_datetime(df['dateTime'])
@@ -74,7 +75,7 @@ def load_refit_data(data_path: str, home_id: int = 1) -> pd.DataFrame:
             
             df.sort_index(inplace=True)
             
-            print(f"Loaded {len(df)} records from {df.index.min()} to {df.index.max()}")
+            print(f"Processed {len(df)} records from {df.index.min()} to {df.index.max()}")
             print(f"Columns: {list(df.columns)}")
             
             return df
