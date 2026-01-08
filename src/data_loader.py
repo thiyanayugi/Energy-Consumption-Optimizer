@@ -167,6 +167,8 @@ def merge_datasets(appliance_df: pd.DataFrame,
     print("Merging appliance and weather data...")
     
     # Merge on timestamp index using nearest time matching
+    # Tolerance of 1 hour allows matching weather data to appliance readings
+    # even if timestamps don't align perfectly
     merged_df = pd.merge_asof(
         appliance_df.reset_index().sort_values('timestamp'),
         weather_df.reset_index().sort_values('timestamp'),
