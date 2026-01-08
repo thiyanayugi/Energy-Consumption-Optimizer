@@ -95,7 +95,8 @@ def train_xgboost_model(X_train: pd.DataFrame,
     # Create model
     model = xgb.XGBRegressor(**params)
     
-    # Prepare evaluation set
+    # Prepare evaluation set for monitoring training progress
+    # Allows tracking performance on both training and validation data during training
     eval_set = [(X_train, y_train)]
     if X_val is not None and y_val is not None:
         eval_set.append((X_val, y_val))
