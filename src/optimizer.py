@@ -97,7 +97,8 @@ def optimize_schedule(appliances_config: Dict,
     total_cost = 0
     for name, config in appliances_config.items():
         # Cost = sum over hours of (ON/OFF * power_rating * price)
-        # Convert power from Watts to kW
+        # Convert power from Watts to kW for cost calculation
+        # Electricity prices are typically in £/kWh
         power_kw = config['power_rating'] / 1000.0
         hourly_cost = cp.multiply(schedules[name], np.array(hourly_prices) * power_kw)
         total_cost += cp.sum(hourly_cost)
