@@ -152,6 +152,8 @@ def optimize_schedule(appliances_config: Dict,
     problem = cp.Problem(objective, constraints)
     
     print("Solving optimization problem...")
+    # Try multiple solvers in order of preference for robustness
+    # ECOS_BB is preferred for mixed-integer problems, with SCS as fallback
     try:
         # Try ECOS solver first (comes with cvxpy)
         problem.solve(solver=cp.ECOS_BB, verbose=False)
