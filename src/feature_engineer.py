@@ -1,6 +1,11 @@
 """
 Feature engineering utilities.
 Creates lag features, rolling statistics, and prepares data for modeling.
+
+This module provides comprehensive feature engineering capabilities for time-series
+energy consumption data, including lag features for temporal dependencies,
+rolling window statistics for trend analysis, and proper train/val/test splitting
+while maintaining temporal ordering.
 """
 
 import pandas as pd
