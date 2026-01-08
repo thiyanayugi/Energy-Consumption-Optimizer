@@ -15,11 +15,21 @@ def define_appliance_constraints(appliances_config: Dict) -> Dict:
     """
     Parse and validate appliance constraint definitions.
     
+    This function ensures all required configuration parameters are present
+    and validates that time windows and runtime constraints are feasible.
+    
     Args:
-        appliances_config: Dictionary with appliance configurations
+        appliances_config: Dictionary with appliance configurations containing:
+            - runtime_hours: Duration appliance must run (hours)
+            - earliest_start: Earliest hour appliance can start (0-23)
+            - latest_finish: Latest hour appliance must finish by (1-24)
+            - power_rating: Appliance power consumption (Watts)
     
     Returns:
         Validated appliance constraints dictionary
+        
+    Raises:
+        ValueError: If required keys are missing or constraints are invalid
     """
     print("Defining appliance constraints...")
     
