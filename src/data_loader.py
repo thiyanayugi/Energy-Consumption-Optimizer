@@ -80,6 +80,8 @@ def load_refit_data(data_path: str, home_id: int = 1) -> pd.DataFrame:
             }
             
             # Rename available columns
+            # REFIT dataset uses generic names; actual appliances vary by house
+            # House 1: Appliance1=Fridge, Appliance2=Freezer, Appliance3=Tumble Dryer, etc.
             df.rename(columns={k: v for k, v in column_mapping.items() if k in df.columns}, inplace=True)
             
             df.sort_index(inplace=True)
