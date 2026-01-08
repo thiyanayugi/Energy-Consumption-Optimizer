@@ -174,7 +174,9 @@ def remove_outliers(df: pd.DataFrame,
     if columns is None:
         columns = df.select_dtypes(include=[np.number]).columns.tolist()
     
-    # Calculate z-scores
+    # Calculate z-scores: number of standard deviations from the mean
+    # Z-score = (value - mean) / std_deviation
+    # Values with |z-score| > threshold are considered outliers
     z_scores = np.abs((df_clean[columns] - df_clean[columns].mean()) / df_clean[columns].std())
     
     # Keep rows where all columns are within threshold
