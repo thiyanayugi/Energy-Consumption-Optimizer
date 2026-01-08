@@ -1,6 +1,10 @@
 """
 Data preprocessing utilities.
 Handles resampling, missing values, time features, normalization, and outlier removal.
+
+This module implements a comprehensive preprocessing pipeline for time-series energy data,
+including temporal resampling, missing value imputation, cyclical time feature encoding,
+and data normalization for machine learning models.
 """
 
 import pandas as pd
