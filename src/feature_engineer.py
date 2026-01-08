@@ -38,6 +38,8 @@ def create_lag_features(df: pd.DataFrame,
             print(f"Warning: Column '{col}' not found in DataFrame. Skipping.")
             continue
         
+        # Create lag features to capture temporal dependencies
+        # Lag features help the model learn patterns from previous time steps
         for lag in lag_intervals:
             lag_col_name = f"{col}_lag_{lag}"
             df_with_lags[lag_col_name] = df[col].shift(lag)
