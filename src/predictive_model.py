@@ -1,6 +1,10 @@
 """
 Predictive modeling utilities.
 Implements XGBoost and LSTM models for energy consumption prediction.
+
+This module provides machine learning models for time-series energy forecasting,
+including gradient boosting (XGBoost) for tabular data and recurrent neural networks
+(LSTM) for capturing long-term temporal dependencies.
 """
 
 import pandas as pd
