@@ -92,6 +92,8 @@ def optimize_schedule(appliances_config: Dict,
         schedules[name] = cp.Variable(24, boolean=True)
     
     # Objective: minimize total cost
+    # Total cost is the sum of (power consumption * electricity price) for each hour
+    # when each appliance is running
     total_cost = 0
     for name, config in appliances_config.items():
         # Cost = sum over hours of (ON/OFF * power_rating * price)
