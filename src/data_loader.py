@@ -46,6 +46,12 @@ def load_refit_data(data_path: str, home_id: int = 1) -> pd.DataFrame:
             
             print(f"Loaded {len(df)} total rows from combined file")
             
+            # Filter to only first 10 TimeSeriesVariables (represents one house)
+            # TimeSeriesVariable1-10 = House 1 (Aggregate + 9 appliances)
+            df = df[df['TimeSeriesVariable/@id'].str.contains('TimeSeriesVariable[1-9]$|TimeSeriesVariable10$', regex=True)]
+            
+            print(f"Filtered to {len(df)} rows for House 1 appliances")
+            
             # Convert to wide format
             df['timestamp'] = pd.to_datetime(df['dateTime'])
             df = df.pivot_table(
