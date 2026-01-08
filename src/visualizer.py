@@ -1,6 +1,10 @@
 """
 Visualization utilities for energy consumption and optimization results.
 Creates plots for predictions, schedules, and cost comparisons.
+
+This module provides comprehensive visualization functions for analyzing
+energy consumption patterns, model predictions, optimization schedules,
+and cost savings using matplotlib and seaborn.
 """
 
 import pandas as pd
