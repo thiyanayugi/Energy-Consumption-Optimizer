@@ -113,6 +113,7 @@ def optimize_schedule(appliances_config: Dict,
         constraints.append(cp.sum(schedules[name]) == runtime_hours)
     
     # Constraint 2: Appliances can only run within their time windows
+    # This enforces user-defined operational hours (e.g., washing machine only during daytime)
     for name, config in appliances_config.items():
         earliest = config['earliest_start']
         latest = config['latest_finish']
