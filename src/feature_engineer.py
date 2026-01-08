@@ -75,15 +75,15 @@ def create_rolling_features(df: pd.DataFrame,
             continue
         
         for window in window_sizes:
-            # Rolling mean
+            # Rolling mean captures average consumption trends over time
             mean_col_name = f"{col}_rolling_mean_{window}"
             df_with_rolling[mean_col_name] = df[col].rolling(window=window, min_periods=1).mean()
             
-            # Rolling sum
+            # Rolling sum shows cumulative consumption patterns
             sum_col_name = f"{col}_rolling_sum_{window}"
             df_with_rolling[sum_col_name] = df[col].rolling(window=window, min_periods=1).sum()
             
-            # Rolling std (standard deviation)
+            # Rolling std captures consumption variability and volatility
             std_col_name = f"{col}_rolling_std_{window}"
             df_with_rolling[std_col_name] = df[col].rolling(window=window, min_periods=1).std()
     
