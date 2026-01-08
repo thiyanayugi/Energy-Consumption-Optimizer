@@ -183,6 +183,9 @@ def split_train_val_test(features: pd.DataFrame,
     """
     Split data into train, validation, and test sets chronologically.
     
+    Important: For time series data, we must split chronologically (not randomly)
+    to prevent data leakage and ensure realistic evaluation on future data.
+    
     Args:
         features: Feature DataFrame
         target: Target Series
