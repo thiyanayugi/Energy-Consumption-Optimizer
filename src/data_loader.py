@@ -1,6 +1,9 @@
 """
 Data loading utilities for REFIT Smart Home dataset.
 Handles loading appliance data, weather data, and merging datasets.
+
+This module provides functions to load and prepare the REFIT Smart Home dataset,
+supporting multiple file formats and optional weather data integration.
 """
 
 import pandas as pd
