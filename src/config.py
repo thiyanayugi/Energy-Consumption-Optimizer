@@ -1,6 +1,12 @@
 """
 Configuration file for Energy Consumption Optimizer.
 Contains all hyperparameters, paths, and settings.
+
+This module centralizes all configuration parameters for the energy optimization
+system, including data paths, model hyperparameters, and optimization constraints.
+
+Author: Energy Optimizer Team
+Version: 1.0.0
 """
 
 import os
