@@ -14,9 +14,13 @@ import os
 # ============================================================================
 # DATA PATHS
 # ============================================================================
+# Base directory for all data files (relative to project root)
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data')
+# Directory containing raw REFIT dataset CSV files
 RAW_DATA_DIR = os.path.join(DATA_DIR, 'raw')
+# Directory for preprocessed and feature-engineered data
 PROCESSED_DATA_DIR = os.path.join(DATA_DIR, 'processed')
+# Directory for saving optimization results and visualizations
 RESULTS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'results')
 
 # ============================================================================
