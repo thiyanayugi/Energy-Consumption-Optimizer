@@ -1,6 +1,6 @@
 """
 Visualization utilities for energy consumption and optimization results.
-Creates plots for predictions, schedules, and Cost comparisons.
+Creates plots for predictions, schedules, and cost comparisons.
 """
 
 import pandas as pd
