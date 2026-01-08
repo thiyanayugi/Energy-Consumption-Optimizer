@@ -139,6 +139,9 @@ def prepare_lstm_data(X: pd.DataFrame,
     """
     Prepare data for LSTM model (create sequences).
     
+    LSTM models require input data to be in 3D format: (samples, time_steps, features).
+    This function creates sliding windows of historical data for sequence learning.
+    
     Args:
         X: Features DataFrame
         y: Target Series
@@ -153,6 +156,8 @@ def prepare_lstm_data(X: pd.DataFrame,
     X_sequences = []
     y_sequences = []
     
+    # Create sliding windows of data
+    # Each sequence uses 'sequence_length' previous time steps to predict the next value
     for i in range(len(X_values) - sequence_length):
         X_sequences.append(X_values[i:i+sequence_length])
         y_sequences.append(y_values[i+sequence_length])
