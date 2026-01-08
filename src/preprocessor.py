@@ -58,13 +58,15 @@ def handle_missing_values(df: pd.DataFrame, method: str = 'ffill') -> pd.DataFra
     df_filled = df.copy()
     
     if method == 'ffill':
+        # Forward fill propagates last valid observation forward
         df_filled = df_filled.fillna(method='ffill')
-        # Fill any remaining NaNs at the start with bfill
+        # Fill any remaining NaNs at the start with backward fill
         df_filled = df_filled.fillna(method='bfill')
     elif method == 'bfill':
         df_filled = df_filled.fillna(method='bfill')
         df_filled = df_filled.fillna(method='ffill')
     elif method == 'interpolate':
+        # Time-based interpolation for smooth transitions
         df_filled = df_filled.interpolate(method='time')
     elif method == 'drop':
         df_filled = df_filled.dropna()
