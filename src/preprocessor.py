@@ -98,7 +98,9 @@ def add_time_features(df: pd.DataFrame) -> pd.DataFrame:
     df_with_time['month'] = df_with_time.index.month
     df_with_time['is_weekend'] = (df_with_time['day_of_week'] >= 5).astype(int)
     
-    # Cyclical encoding for hour (to capture 23:00 and 00:00 are close)
+    
+    # Cyclical encoding for hour (to capture that 23:00 and 00:00 are close)
+    # Using sine and cosine ensures smooth transitions at day boundaries
     df_with_time['hour_sin'] = np.sin(2 * np.pi * df_with_time['hour'] / 24)
     df_with_time['hour_cos'] = np.cos(2 * np.pi * df_with_time['hour'] / 24)
     
