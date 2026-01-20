@@ -101,7 +101,7 @@ def main(data_path: str, home_id: int = 1, use_lstm: bool = False, output_dir: s
         appliance_columns=feature_appliances,
         lag_intervals=config.LAG_INTERVALS,
         rolling_windows=config.ROLLING_WINDOW_SIZES,
-        forecast_horizon=4  # Predict 1 hour ahead (4 * 15min)
+        forecast_horizon=4  # Predict 1 hour ahead (4 * 15min intervals)
     )
     
     # Split data
