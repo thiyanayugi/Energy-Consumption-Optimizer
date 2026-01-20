@@ -29,9 +29,12 @@ RESULTS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'results'
 # ============================================================================
 # DATA PROCESSING PARAMETERS
 # ============================================================================
-RESAMPLE_INTERVAL = '15min'  # Resample to 15-minute intervals
-MISSING_VALUE_METHOD = 'ffill'  # Forward fill for missing values
-OUTLIER_THRESHOLD = 3  # Standard deviations for outlier removal
+# Resample to 15-minute intervals for consistent time-series analysis
+RESAMPLE_INTERVAL = '15min'
+# Forward fill for missing values - propagates last valid observation forward
+MISSING_VALUE_METHOD = 'ffill'
+# Standard deviations for outlier removal - values beyond 3σ are considered outliers
+OUTLIER_THRESHOLD = 3
 
 # ============================================================================
 # FEATURE ENGINEERING PARAMETERS
