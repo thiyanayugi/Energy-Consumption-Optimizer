@@ -39,8 +39,10 @@ OUTLIER_THRESHOLD = 3
 # ============================================================================
 # FEATURE ENGINEERING PARAMETERS
 # ============================================================================
-LAG_INTERVALS = [1, 2, 3, 4]  # Number of lag features to create
-ROLLING_WINDOW_SIZES = [4, 8, 12]  # Rolling window sizes (in intervals)
+# Number of lag features to create - captures temporal dependencies
+LAG_INTERVALS = [1, 2, 3, 4]
+# Rolling window sizes (in intervals) - for computing moving averages and statistics
+ROLLING_WINDOW_SIZES = [4, 8, 12]
 
 # ============================================================================
 # MODEL PARAMETERS
