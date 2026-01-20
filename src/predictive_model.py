@@ -165,6 +165,7 @@ def prepare_lstm_data(X: pd.DataFrame,
     
     # Create sliding windows of data
     # Each sequence uses 'sequence_length' previous time steps to predict the next value
+    # Example: if sequence_length=24, use hours 0-23 to predict hour 24
     for i in range(len(X_values) - sequence_length):
         X_sequences.append(X_values[i:i+sequence_length])
         y_sequences.append(y_values[i+sequence_length])
