@@ -22,10 +22,14 @@ def load_refit_data(data_path: str, home_id: int = 1) -> pd.DataFrame:
     
     Args:
         data_path: Path to directory containing REFIT CSV files
-        home_id: Home ID to load (1-21)
+        home_id: Home ID to load (1-21), defaults to House 1
     
     Returns:
-        DataFrame with timestamp index and appliance power columns
+        DataFrame with timestamp index and appliance power columns (in Watts).
+        Columns include 'Aggregate' and individual appliance measurements.
+    
+    Raises:
+        FileNotFoundError: If REFIT data file cannot be found in expected locations
     """
     # Try different file formats
     filename = f"CLEAN_House{home_id}.csv"
