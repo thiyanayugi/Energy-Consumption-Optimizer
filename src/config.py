@@ -16,8 +16,10 @@ from typing import Dict, List, Any
 # DATA PATHS
 # ============================================================================
 # Base directory for all data files (relative to project root)
+# Dynamically resolves to project_root/data regardless of execution context
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data')
 # Directory containing raw REFIT dataset CSV files
+# Expected to contain CLEAN_HouseX.csv files from REFIT dataset
 RAW_DATA_DIR = os.path.join(DATA_DIR, 'raw')
 # Directory for preprocessed and feature-engineered data
 PROCESSED_DATA_DIR = os.path.join(DATA_DIR, 'processed')
