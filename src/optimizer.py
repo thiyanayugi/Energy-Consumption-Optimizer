@@ -179,6 +179,7 @@ def optimize_schedule(appliances_config: Dict,
     optimized_cost = problem.value
     
     # Calculate original cost (assuming appliances run at earliest possible time)
+    # This represents the baseline "unoptimized" schedule for comparison
     original_cost = 0
     original_schedule = {}
     for name, config in appliances_config.items():
@@ -186,7 +187,7 @@ def optimize_schedule(appliances_config: Dict,
         earliest = config['earliest_start']
         power_kw = config['power_rating'] / 1000.0
         
-        # Original schedule: run starting at earliest time
+        # Original schedule: run starting at earliest time (typical user behavior)
         schedule = np.zeros(24)
         schedule[earliest:earliest+runtime_hours] = 1
         original_schedule[name] = schedule
