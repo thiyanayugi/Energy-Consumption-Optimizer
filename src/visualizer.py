@@ -15,10 +15,10 @@ from typing import Dict, List, Optional, Tuple
 import warnings
 warnings.filterwarnings('ignore')
 
-# Set style
+# Set visualization style for consistent, professional-looking plots
 sns.set_style("whitegrid")
-plt.rcParams['figure.figsize'] = (14, 6)
-plt.rcParams['figure.dpi'] = 100
+plt.rcParams['figure.figsize'] = (14, 6)  # Default figure size
+plt.rcParams['figure.dpi'] = 100          # Display resolution
 
 
 def plot_predictions(y_true: np.ndarray,
