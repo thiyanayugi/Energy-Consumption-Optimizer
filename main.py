@@ -32,11 +32,15 @@ def main(data_path: str, home_id: int = 1, use_lstm: bool = False, output_dir: s
     """
     Main pipeline for energy consumption optimization.
     
+    Executes a 7-step pipeline: data loading, preprocessing, feature engineering,
+    predictive modeling (XGBoost/LSTM), schedule optimization, visualization,
+    and results summary generation.
+    
     Args:
         data_path: Path to REFIT dataset directory
-        home_id: Home ID to analyze
+        home_id: Home ID to analyze (1-21)
         use_lstm: Whether to train LSTM model in addition to XGBoost
-        output_dir: Directory to save results
+        output_dir: Directory to save results and visualizations
     """
     print("\n" + "="*80)
     print(" "*20 + "ENERGY CONSUMPTION OPTIMIZER")
