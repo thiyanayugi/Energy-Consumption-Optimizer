@@ -66,17 +66,20 @@ def train_xgboost_model(X_train: pd.DataFrame,
                        y_val: Optional[pd.Series] = None,
                        params: Optional[Dict] = None) -> xgb.XGBRegressor:
     """
-    Train XGBoost regression model.
+    Train XGBoost regression model for energy consumption prediction.
+    
+    XGBoost is a gradient boosting algorithm that builds an ensemble of decision trees
+    to make predictions. It's particularly effective for tabular data with complex patterns.
     
     Args:
-        X_train: Training features
-        y_train: Training target
-        X_val: Validation features (optional)
+        X_train: Training features (preprocessed and engineered)
+        y_train: Training target (energy consumption values)
+        X_val: Validation features for monitoring training progress (optional)
         y_val: Validation target (optional)
-        params: XGBoost parameters
+        params: XGBoost hyperparameters (uses defaults if None)
     
     Returns:
-        Trained XGBoost model
+        Trained XGBoost model ready for predictions
     """
     print("\n" + "="*60)
     print("TRAINING XGBOOST MODEL")
