@@ -92,7 +92,7 @@ def main(data_path: str, home_id: int = 1, use_lstm: bool = False, output_dir: s
     # Use Aggregate as target (total household consumption)
     target_column = 'Aggregate' if 'Aggregate' in appliance_cols else appliance_cols[0]
     
-    # Use subset of appliances for features (to keep model manageable)
+    # Use subset of appliances for features (to keep model manageable and avoid overfitting)
     feature_appliances = appliance_cols[:5] if len(appliance_cols) > 5 else appliance_cols
     
     features, target = prepare_features_and_target(
