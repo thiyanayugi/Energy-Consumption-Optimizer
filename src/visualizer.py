@@ -57,6 +57,7 @@ def plot_predictions(y_true: np.ndarray,
     ax2.scatter(y_true, y_pred, alpha=0.5, s=20)
     
     # Add diagonal line (perfect prediction)
+    # Points on this line indicate perfect predictions where y_true == y_pred
     min_val = min(y_true.min(), y_pred.min())
     max_val = max(y_true.max(), y_pred.max())
     ax2.plot([min_val, max_val], [min_val, max_val], 'r--', label='Perfect Prediction', linewidth=2)
