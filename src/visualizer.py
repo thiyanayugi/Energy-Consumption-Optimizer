@@ -29,12 +29,15 @@ def plot_predictions(y_true: np.ndarray,
     """
     Plot predicted vs actual energy consumption.
     
+    Creates a two-panel visualization: time series comparison and scatter plot
+    for assessing prediction accuracy.
+    
     Args:
-        y_true: True values
-        y_pred: Predicted values
-        timestamps: Optional timestamps for x-axis
-        title: Plot title
-        save_path: Optional path to save figure
+        y_true: True values (actual energy consumption)
+        y_pred: Predicted values (model predictions)
+        timestamps: Optional timestamps for x-axis (uses indices if None)
+        title: Plot title for the time series panel
+        save_path: Optional path to save figure (saves as high-res PNG if provided)
     """
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 10))
     
