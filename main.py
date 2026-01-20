@@ -81,7 +81,8 @@ def main(data_path: str, home_id: int = 1, use_lstm: bool = False, output_dir: s
     print("STEP 3: FEATURE ENGINEERING")
     print("="*80 + "\n")
     
-    # Identify appliance columns
+    
+    # Identify appliance columns (exclude derived features like lag, rolling, time features)
     appliance_cols = [col for col in df_processed.columns 
                      if ('Appliance' in col or 'Aggregate' in col) 
                      and not any(x in col for x in ['lag', 'rolling', 'hour', 'day', 'sin', 'cos', 'weekend'])]
