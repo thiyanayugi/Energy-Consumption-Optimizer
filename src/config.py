@@ -49,6 +49,7 @@ ROLLING_WINDOW_SIZES = [4, 8, 12]
 # ============================================================================
 
 # Train/Validation/Test split ratios
+# 70% for training, 15% for validation (hyperparameter tuning), 15% for final testing
 TRAIN_RATIO = 0.70
 VAL_RATIO = 0.15
 TEST_RATIO = 0.15
