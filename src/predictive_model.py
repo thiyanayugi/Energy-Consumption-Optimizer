@@ -237,9 +237,10 @@ def train_lstm_model(X_train: pd.DataFrame,
     print("\nModel architecture:")
     model.summary()
     
+    
     # Early stopping to prevent overfitting
     # Monitors validation loss and stops training if no improvement for 'patience' epochs
-    # Restores the best weights found during training
+    # Restores the best weights found during training to ensure optimal model performance
     early_stop = EarlyStopping(monitor='val_loss' if validation_data else 'loss', 
                               patience=10, restore_best_weights=True)
     
