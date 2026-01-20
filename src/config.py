@@ -65,13 +65,13 @@ XGBOOST_PARAMS = {
     'n_jobs': -1                # Use all available CPU cores
 }
 
-# LSTM parameters
+# LSTM parameters for recurrent neural network model
 LSTM_PARAMS = {
-    'units': 64,
-    'dropout': 0.2,
-    'epochs': 50,
-    'batch_size': 32,
-    'sequence_length': 24  # Number of time steps to look back
+    'units': 64,                # Number of LSTM units/neurons in hidden layer
+    'dropout': 0.2,             # Dropout rate for regularization (20%)
+    'epochs': 50,               # Number of training epochs
+    'batch_size': 32,           # Number of samples per gradient update
+    'sequence_length': 24       # Number of time steps to look back (24 hours)
 }
 
 # ============================================================================
