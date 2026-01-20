@@ -49,7 +49,7 @@ def calculate_metrics(y_true: np.ndarray, y_pred: np.ndarray) -> Dict[str, float
     
     # MAPE (Mean Absolute Percentage Error)
     # Filter out zero values to avoid division by zero errors
-    # MAPE is expressed as a percentage for interpretability
+    # MAPE is expressed as a percentage for interpretability (0-100%)
     mask = y_true != 0
     mape = np.mean(np.abs((y_true[mask] - y_pred[mask]) / y_true[mask])) * 100 if mask.sum() > 0 else 0
     
