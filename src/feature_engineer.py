@@ -60,13 +60,16 @@ def create_rolling_features(df: pd.DataFrame,
     """
     Create rolling statistics features.
     
+    Computes rolling mean, sum, and standard deviation over specified window sizes
+    to capture consumption trends, cumulative patterns, and variability.
+    
     Args:
         df: DataFrame with time series data
         columns: List of columns to create rolling features for
-        window_sizes: List of window sizes (e.g., [4, 8, 12])
+        window_sizes: List of window sizes in intervals (e.g., [4, 8, 12])
     
     Returns:
-        DataFrame with additional rolling feature columns
+        DataFrame with rolling mean, sum, and std features for each column/window combination
     """
     print(f"Creating rolling features for {len(columns)} columns with windows: {window_sizes}")
     
