@@ -21,13 +21,16 @@ def create_lag_features(df: pd.DataFrame,
     """
     Create lag features for specified columns.
     
+    Lag features capture temporal dependencies by including past values as predictors.
+    For example, lag_1 represents the value from the previous time step.
+    
     Args:
         df: DataFrame with time series data
         columns: List of columns to create lag features for
-        lag_intervals: List of lag intervals (e.g., [1, 2, 3, 4])
+        lag_intervals: List of lag intervals (e.g., [1, 2, 3, 4] for 1-4 steps back)
     
     Returns:
-        DataFrame with additional lag feature columns
+        DataFrame with additional lag feature columns named '{column}_lag_{interval}'
     """
     print(f"Creating lag features for {len(columns)} columns with lags: {lag_intervals}")
     
