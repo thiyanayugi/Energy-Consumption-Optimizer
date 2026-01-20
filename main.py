@@ -1,6 +1,10 @@
 """
 Main script for Energy Consumption Optimizer.
 Runs the complete pipeline from data loading to optimization.
+
+This script orchestrates the entire energy optimization workflow including:
+data loading, preprocessing, feature engineering, predictive modeling,
+schedule optimization, and results visualization.
 """
 
 import os
