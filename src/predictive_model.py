@@ -32,14 +32,17 @@ except ImportError:
 
 def calculate_metrics(y_true: np.ndarray, y_pred: np.ndarray) -> Dict[str, float]:
     """
-    Calculate evaluation metrics.
+    Calculate evaluation metrics for regression models.
+    
+    Computes RMSE (Root Mean Squared Error), MAE (Mean Absolute Error),
+    and MAPE (Mean Absolute Percentage Error) for model evaluation.
     
     Args:
-        y_true: True values
-        y_pred: Predicted values
+        y_true: True values (ground truth)
+        y_pred: Predicted values (model output)
     
     Returns:
-        Dictionary with RMSE, MAE, and MAPE
+        Dictionary with RMSE, MAE, and MAPE metrics
     """
     rmse = np.sqrt(mean_squared_error(y_true, y_pred))
     mae = mean_absolute_error(y_true, y_pred)
