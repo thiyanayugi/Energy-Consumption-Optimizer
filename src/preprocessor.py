@@ -88,11 +88,17 @@ def add_time_features(df: pd.DataFrame) -> pd.DataFrame:
     """
     Add time-based features to the dataset.
     
+    Creates temporal features including hour, day of week, month, weekend indicator,
+    and cyclical encodings (sine/cosine) for smooth periodic representations.
+    
     Args:
         df: DataFrame with datetime index
     
     Returns:
-        DataFrame with additional time features
+        DataFrame with additional time features:
+            - hour, day_of_week, day_of_month, month, is_weekend
+            - hour_sin, hour_cos (cyclical hour encoding)
+            - day_sin, day_cos (cyclical day of week encoding)
     """
     print("Adding time-based features...")
     
