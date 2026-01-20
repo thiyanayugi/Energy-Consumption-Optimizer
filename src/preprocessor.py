@@ -29,6 +29,7 @@ def resample_data(df: pd.DataFrame, interval: str = '15min') -> pd.DataFrame:
     print(f"Resampling data to {interval} intervals...")
     
     # Resample using mean for power values
+    # Mean is appropriate for power consumption as it represents average demand over the interval
     df_resampled = df.resample(interval).mean()
     
     print(f"Resampled from {len(df)} to {len(df_resampled)} records")
