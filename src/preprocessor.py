@@ -43,7 +43,11 @@ def handle_missing_values(df: pd.DataFrame, method: str = 'ffill') -> pd.DataFra
     
     Args:
         df: DataFrame with potential missing values
-        method: Method to use ('ffill', 'bfill', 'interpolate', 'drop')
+        method: Method to use for imputation:
+            - 'ffill': Forward fill (propagate last valid observation)
+            - 'bfill': Backward fill (use next valid observation)
+            - 'interpolate': Time-based linear interpolation
+            - 'drop': Remove rows with missing values
     
     Returns:
         DataFrame with missing values handled
