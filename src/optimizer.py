@@ -1,3 +1,4 @@
+# Updated: 2026-01-28
 """
 Appliance schedule optimization using convex optimization.
 Minimizes electricity cost while respecting appliance constraints.
