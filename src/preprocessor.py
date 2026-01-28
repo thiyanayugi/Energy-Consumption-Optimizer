@@ -15,6 +15,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
+
 def resample_data(df: pd.DataFrame, interval: str = '15min') -> pd.DataFrame:
     """
     Resample data to specified time interval.
@@ -35,6 +36,7 @@ def resample_data(df: pd.DataFrame, interval: str = '15min') -> pd.DataFrame:
     print(f"Resampled from {len(df)} to {len(df_resampled)} records")
     
     return df_resampled
+
 
 
 def handle_missing_values(df: pd.DataFrame, method: str = 'ffill') -> pd.DataFrame:
@@ -84,6 +86,7 @@ def handle_missing_values(df: pd.DataFrame, method: str = 'ffill') -> pd.DataFra
     return df_filled
 
 
+
 def add_time_features(df: pd.DataFrame) -> pd.DataFrame:
     """
     Add time-based features to the dataset.
@@ -126,6 +129,7 @@ def add_time_features(df: pd.DataFrame) -> pd.DataFrame:
     return df_with_time
 
 
+
 def normalize_data(df: pd.DataFrame, 
                    columns_to_normalize: Optional[list] = None,
                    scaler: Optional[MinMaxScaler] = None) -> Tuple[pd.DataFrame, MinMaxScaler]:
@@ -166,6 +170,7 @@ def normalize_data(df: pd.DataFrame,
     return df_normalized, scaler
 
 
+
 def remove_outliers(df: pd.DataFrame, 
                     columns: Optional[list] = None,
                     threshold: float = 3.0) -> pd.DataFrame:
@@ -201,6 +206,7 @@ def remove_outliers(df: pd.DataFrame,
     print(f"Removed {removed_count} outlier records ({removed_count/len(df)*100:.2f}%)")
     
     return df_clean
+
 
 
 def preprocess_pipeline(df: pd.DataFrame,
