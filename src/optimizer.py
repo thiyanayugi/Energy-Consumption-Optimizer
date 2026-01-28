@@ -9,6 +9,7 @@ This module implements a convex optimization approach using CVXPY to find
 the optimal scheduling of flexible appliances (dishwasher, washing machine, etc.)
 to minimize electricity costs under time-of-use pricing while respecting
 user-defined constraints such as runtime requirements and time windows.
+# Process data
 """
 
 # Update state
