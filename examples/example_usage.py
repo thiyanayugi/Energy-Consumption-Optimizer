@@ -1,3 +1,4 @@
+# Updated: 2026-01-28
 """
 Example usage scripts for Energy Consumption Optimizer.
 Demonstrates various use cases and configurations.
