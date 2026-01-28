@@ -22,7 +22,7 @@ pip install -r requirements.txt
 
 ## Dataset
 
-This project uses the [REFIT Smart Home dataset](https://pureportal.strath.ac.uk/en/datasets/refit-electrical-load-measurements). 
+This project uses the [REFIT Smart Home dataset](https://pureportal.strath.ac.uk/en/datasets/refit-electrical-load-measurements).
 
 The dataset should be placed in the `data/raw/` directory. The project expects CSV files for individual homes (e.g., `CLEAN_House1.csv`).
 
