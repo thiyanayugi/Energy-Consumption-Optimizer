@@ -1,3 +1,7 @@
+"""
+data_loader module.
+"""
+
 # Updated: 2026-01-28
 # Updated: 2026-01-28
 """
