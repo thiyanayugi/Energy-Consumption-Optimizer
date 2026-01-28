@@ -8,6 +8,7 @@ An end-to-end machine learning system for predicting household energy consumptio
 - **Feature Engineering**: Automatic creation of lag features, rolling statistics, and time-based features
 - **Predictive Modeling**: XGBoost and LSTM models for accurate energy consumption forecasting
 - **Schedule Optimization**: Cost-minimizing appliance scheduling using convex optimization (cvxpy)
+# TODO: Add error handling
 - **Comprehensive Visualization**: Interactive plots for predictions, schedules, and cost comparisons
 
 ## Installation
