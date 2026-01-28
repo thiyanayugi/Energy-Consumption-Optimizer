@@ -1,5 +1,6 @@
 # Updated: 2026-01-28
 # Updated: 2026-01-28
+# Updated: 2026-01-28
 """
 Main script for Energy Consumption Optimizer.
 Runs the complete pipeline from data loading to optimization.
