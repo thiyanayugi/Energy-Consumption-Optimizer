@@ -20,7 +20,7 @@ def example_basic_optimization():
     print("\n" + "="*80)
     print("EXAMPLE 1: Basic Optimization")
     print("="*80 + "\n")
-    
+
     # Optimize with default settings
     optimized_schedule, original_cost, optimized_cost = optimize_schedule(
         config.FLEXIBLE_APPLIANCES,
@@ -28,7 +28,7 @@ def example_basic_optimization():
         allow_simultaneous=True,
         max_simultaneous=2
     )
-    
+
     print(f"\nOriginal Cost: £{original_cost:.4f}")
     print(f"Optimized Cost: £{optimized_cost:.4f}")
     print(f"Savings: £{original_cost - optimized_cost:.4f} ({(original_cost - optimized_cost)/original_cost*100:.2f}%)")
@@ -41,7 +41,7 @@ def example_custom_appliances():
     print("\n" + "="*80)
     print("EXAMPLE 2: Custom Appliance Configuration")
     print("="*80 + "\n")
-    
+
     # Define custom appliances
     custom_appliances = {
         'Electric Vehicle': {
@@ -59,20 +59,20 @@ def example_custom_appliances():
             'power_rating': 1500,
         },
     }
-    
+
     # Note: For appliances that wrap around midnight, you may need to adjust the optimization logic
     # For this example, we'll use a simplified version
     simplified_appliances = {
         'Pool Pump': custom_appliances['Pool Pump']
     }
-    
+
     optimized_schedule, original_cost, optimized_cost = optimize_schedule(
         simplified_appliances,
         config.HOURLY_PRICES,
         allow_simultaneous=True,
         max_simultaneous=1
     )
-    
+
     print(f"\nSavings: £{original_cost - optimized_cost:.4f}")
 
 
@@ -83,23 +83,23 @@ def example_no_simultaneous():
     print("\n" + "="*80)
     print("EXAMPLE 3: No Simultaneous Appliances")
     print("="*80 + "\n")
-    
+
     optimized_schedule, original_cost, optimized_cost = optimize_schedule(
         config.FLEXIBLE_APPLIANCES,
         config.HOURLY_PRICES,
         allow_simultaneous=False,  # Only one appliance at a time
         max_simultaneous=1
     )
-    
+
     print(f"\nSavings: £{original_cost - optimized_cost:.4f}")
-    
+
     # Verify no overlaps
     import numpy as np
     for hour in range(24):
         count = sum(schedule[hour] for schedule in optimized_schedule.values())
         if count > 1:
             print(f"Warning: {count} appliances running at hour {hour}")
-    
+
     print("✓ Verified: No simultaneous appliances")
 
 
@@ -110,10 +110,10 @@ def example_custom_pricing():
     print("\n" + "="*80)
     print("EXAMPLE 4: Custom Electricity Pricing")
     print("="*80 + "\n")
-    
+
     # Flat rate pricing
     flat_rate = [0.15] * 24
-    
+
     print("Flat rate pricing:")
     optimized_schedule, original_cost, optimized_cost = optimize_schedule(
         config.FLEXIBLE_APPLIANCES,
@@ -122,7 +122,7 @@ def example_custom_pricing():
         max_simultaneous=2
     )
     print(f"Savings with flat rate: £{original_cost - optimized_cost:.4f}")
-    
+
     # Extreme time-of-use pricing
     extreme_tou = [
         0.05, 0.05, 0.05, 0.05, 0.05, 0.05,  # 00:00-05:00 (very cheap)
@@ -132,7 +132,7 @@ def example_custom_pricing():
         0.20, 0.20, 0.20, 0.20,              # 19:00-22:00 (medium)
         0.10                                  # 23:00 (cheap)
     ]
-    
+
     print("\nExtreme time-of-use pricing:")
     optimized_schedule, original_cost, optimized_cost = optimize_schedule(
         config.FLEXIBLE_APPLIANCES,
@@ -149,7 +149,7 @@ if __name__ == "__main__":
     example_custom_appliances()
     example_no_simultaneous()
     example_custom_pricing()
-    
+
     print("\n" + "="*80)
     print("All examples completed!")
     print("="*80 + "\n")
