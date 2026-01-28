@@ -1,3 +1,4 @@
+<!-- Updated: 2026-01-28 -->
 # Energy Consumption Optimizer
 
 An end-to-end machine learning system for predicting household energy consumption and optimizing appliance schedules to minimize electricity costs using the REFIT Smart Home dataset.
