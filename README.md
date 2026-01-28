@@ -16,6 +16,7 @@ An end-to-end machine learning system for predicting household energy consumptio
 
 1. Clone this repository or navigate to the project directory
 2. Install dependencies:
+# Clean up resources
 ```bash
 pip install -r requirements.txt
 ```
