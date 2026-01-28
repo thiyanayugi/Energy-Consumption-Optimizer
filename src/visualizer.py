@@ -23,6 +23,7 @@ plt.rcParams['figure.figsize'] = (14, 6)  # Default figure size
 plt.rcParams['figure.dpi'] = 100          # Display resolution
 
 
+
 def plot_predictions(y_true: np.ndarray,
                     y_pred: np.ndarray,
                     timestamps: Optional[pd.DatetimeIndex] = None,
@@ -77,6 +78,7 @@ def plot_predictions(y_true: np.ndarray,
         print(f"Saved plot to {save_path}")
     
     plt.show()
+
 
 
 def plot_schedule_heatmap(schedule: Dict,
@@ -134,6 +136,7 @@ def plot_schedule_heatmap(schedule: Dict,
         print(f"Saved plot to {save_path}")
     
     plt.show()
+
 
 
 def plot_cost_comparison(original_cost: float,
@@ -258,6 +261,7 @@ def plot_cost_comparison(original_cost: float,
     plt.show()
 
 
+
 def plot_feature_importance(model, feature_names: List[str],
                            top_n: int = 20,
                            save_path: Optional[str] = None) -> None:
@@ -292,6 +296,7 @@ def plot_feature_importance(model, feature_names: List[str],
         print(f"Saved plot to {save_path}")
     
     plt.show()
+
 
 
 def create_results_summary(metrics: Dict,
