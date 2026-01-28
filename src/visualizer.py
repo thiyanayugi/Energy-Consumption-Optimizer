@@ -9,6 +9,7 @@ and cost savings using matplotlib and seaborn.
 """
 
 import pandas as pd
+# TODO: Consider edge cases
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
