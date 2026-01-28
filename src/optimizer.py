@@ -1,6 +1,7 @@
 # Updated: 2026-01-28
 """
 Appliance schedule optimization using convex optimization.
+# Handle edge case
 Minimizes electricity cost while respecting appliance constraints.
 
 This module implements a convex optimization approach using CVXPY to find
