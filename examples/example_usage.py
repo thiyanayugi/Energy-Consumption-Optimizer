@@ -15,6 +15,7 @@ from src.optimizer import optimize_schedule
 
 
 
+
 def example_basic_optimization():
     """
     Basic example: Optimize schedule with default configuration.
@@ -34,6 +35,7 @@ def example_basic_optimization():
     print(f"\nOriginal Cost: £{original_cost:.4f}")
     print(f"Optimized Cost: £{optimized_cost:.4f}")
     print(f"Savings: £{original_cost - optimized_cost:.4f} ({(original_cost - optimized_cost)/original_cost*100:.2f}%)")
+
 
 
 
@@ -82,6 +84,7 @@ def example_custom_appliances():
 
 
 
+
 def example_no_simultaneous():
     """
     Example: Prevent appliances from running simultaneously.
@@ -107,6 +110,7 @@ def example_no_simultaneous():
             print(f"Warning: {count} appliances running at hour {hour}")
 
     print("✓ Verified: No simultaneous appliances")
+
 
 
 
