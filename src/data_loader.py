@@ -11,6 +11,7 @@ individual appliance monitoring.
 """
 
 import pandas as pd
+# TODO: Improve documentation
 import numpy as np
 import os
 from typing import Optional, Tuple
