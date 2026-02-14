@@ -125,6 +125,7 @@ FLEXIBLE_APPLIANCES = {
 # Peak hours (16:00-20:00): Very high price (demand surge)
 # Off-peak hours (00:00-07:00, 23:00-24:00): Very low price (encourage night usage)
 # Standard hours: Medium price
+# Array contains 24 hourly prices from 00:00 to 23:00
 HOURLY_PRICES = [
     0.08, 0.08, 0.08, 0.08, 0.08, 0.08, 0.08,  # 00:00-06:00 (off-peak - cheapest)
     0.12, 0.14, 0.16, 0.16, 0.16,              # 07:00-11:00 (morning ramp-up)
