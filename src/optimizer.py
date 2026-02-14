@@ -116,6 +116,7 @@ def optimize_schedule(appliances_config: Dict,
     
     # Constraint 1: Each appliance must run for its required runtime
     # Use ceiling to ensure fractional hours (e.g., 1.5h) are rounded up to full hours
+    # This guarantees appliances complete their full operating cycle
     for name, config in appliances_config.items():
         runtime_hours = int(np.ceil(config['runtime_hours']))
         constraints.append(cp.sum(schedules[name]) == runtime_hours)
