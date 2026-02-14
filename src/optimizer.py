@@ -147,7 +147,9 @@ def optimize_schedule(appliances_config: Dict,
         # For simplicity, we'll allow non-consecutive for now
         # (Can be enhanced with more complex constraints)
     
+    
     # Constraint 4: Maximum simultaneous appliances
+    # Prevents overloading electrical circuits or exceeding household capacity
     if not allow_simultaneous:
         max_simultaneous = 1
     
