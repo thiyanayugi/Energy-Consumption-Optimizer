@@ -162,10 +162,12 @@ def normalize_data(df: pd.DataFrame,
         return df_normalized, None
     
     if scaler is None:
+        # Fit new scaler on training data and transform
         scaler = MinMaxScaler()
         df_normalized[columns_to_normalize] = scaler.fit_transform(df[columns_to_normalize])
         print(f"Fitted scaler and normalized {len(columns_to_normalize)} columns")
     else:
+        # Use existing scaler (for validation/test data) to avoid data leakage
         df_normalized[columns_to_normalize] = scaler.transform(df[columns_to_normalize])
         print(f"Normalized {len(columns_to_normalize)} columns using provided scaler")
     
