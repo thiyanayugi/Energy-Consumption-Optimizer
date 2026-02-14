@@ -145,6 +145,7 @@ MAX_SIMULTANEOUS_APPLIANCES = 2  # Maximum number of appliances running simultan
 # ============================================================================
 # VISUALIZATION PARAMETERS
 # ============================================================================
+# Default plot settings for consistent, publication-quality figures
 FIGURE_SIZE = (14, 6)
 DPI = 100
 COLOR_PALETTE = 'Set2'
