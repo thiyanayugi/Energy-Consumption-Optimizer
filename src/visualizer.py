@@ -223,6 +223,7 @@ def plot_cost_comparison(original_cost: float,
     original_hourly_power = np.zeros(24)
     optimized_hourly_power = np.zeros(24)
     
+    # Aggregate power consumption across all appliances for each hour
     for name, config in appliances_config.items():
         power_kw = config['power_rating'] / 1000.0
         original_hourly_power += original_schedule[name] * power_kw
