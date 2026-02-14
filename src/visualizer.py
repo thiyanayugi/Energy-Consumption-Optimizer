@@ -107,6 +107,7 @@ def plot_schedule_heatmap(schedule: Dict,
     schedule_matrix = np.array([schedule[name] for name in appliance_names])
     
     # Plot 1: Schedule heatmap
+    # YlOrRd colormap provides clear visual distinction between ON (red) and OFF (yellow/white)
     sns.heatmap(schedule_matrix, 
                 xticklabels=[f"{h:02d}:00" for h in hours],
                 yticklabels=appliance_names,
