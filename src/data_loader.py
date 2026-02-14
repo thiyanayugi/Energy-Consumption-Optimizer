@@ -244,6 +244,7 @@ def load_and_prepare_data(data_path: str,
         weather_df = load_weather_data(weather_path)
     
     # Merge datasets
+    # Combines appliance data with weather data on timestamp index for enhanced predictions
     df = merge_datasets(appliance_df, weather_df)
     
     # Filter appliances if specified
