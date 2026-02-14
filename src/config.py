@@ -153,4 +153,5 @@ COLOR_PALETTE = 'Set2'
 # ============================================================================
 # RANDOM SEED
 # ============================================================================
+# Ensures reproducible results across model training runs
 RANDOM_SEED = 42
