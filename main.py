@@ -153,7 +153,12 @@ def main(data_path: str, home_id: int = 1, use_lstm: bool = False, output_dir: s
 
         if lstm_model is not None:
             y_pred_lstm, metrics_lstm = evaluate_model(lstm_model, X_test, y_test, 'lstm')
+<<<<<<< HEAD
 
+=======
+            
+            # Align prediction arrays (LSTM predictions are shorter due to sequence creation)
+>>>>>>> 7a02783 (Explain LSTM prediction array alignment for visualization)
             plot_predictions(
                 y_test.values[-len(y_pred_lstm):], y_pred_lstm,
                 timestamps=y_test.index[-len(y_pred_lstm):],
