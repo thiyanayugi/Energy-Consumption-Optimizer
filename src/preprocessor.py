@@ -69,6 +69,7 @@ def handle_missing_values(df: pd.DataFrame, method: str = 'ffill') -> pd.DataFra
         # Forward fill propagates last valid observation forward
         df_filled = df_filled.fillna(method='ffill')
         # Fill any remaining NaNs at the start with backward fill
+        # This handles edge case where first values are missing
         df_filled = df_filled.fillna(method='bfill')
     elif method == 'bfill':
         df_filled = df_filled.fillna(method='bfill')
