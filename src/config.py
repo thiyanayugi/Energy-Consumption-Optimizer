@@ -138,6 +138,7 @@ HOURLY_PRICES = [
 # ============================================================================
 # OPTIMIZATION PARAMETERS
 # ============================================================================
+# Controls appliance scheduling constraints to prevent electrical overload
 ALLOW_SIMULTANEOUS_APPLIANCES = True  # Can multiple appliances run at once?
 MAX_SIMULTANEOUS_APPLIANCES = 2  # Maximum number of appliances running simultaneously
 
