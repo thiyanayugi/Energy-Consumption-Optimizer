@@ -125,6 +125,7 @@ def create_target_variable(df: pd.DataFrame,
     df_with_target = df.copy()
     
     # Shift target column backwards to create future value
+    # Negative shift moves values upward, so row i gets the value from row i+forecast_horizon
     df_with_target['target'] = df[target_column].shift(-forecast_horizon)
     
     return df_with_target
