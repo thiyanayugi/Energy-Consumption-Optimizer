@@ -202,6 +202,7 @@ def remove_outliers(df: pd.DataFrame,
     z_scores = np.abs((df_clean[columns] - df_clean[columns].mean()) / df_clean[columns].std())
     
     # Keep rows where all columns are within threshold
+    # This ensures we only remove rows that are outliers in at least one dimension
     mask = (z_scores < threshold).all(axis=1)
     
     removed_count = len(df_clean) - mask.sum()
