@@ -97,7 +97,9 @@ def create_rolling_features(df: pd.DataFrame,
             std_col_name = f"{col}_rolling_std_{window}"
             df_with_rolling[std_col_name] = df[col].rolling(window=window, min_periods=1).std()
     
+    
     # Count how many rolling features were created
+    # For each column and window size, we create 3 features: mean, sum, std
     rolling_feature_count = len(columns) * len(window_sizes) * 3  # mean, sum, std
     print(f"Created {rolling_feature_count} rolling features")
     
